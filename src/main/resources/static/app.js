@@ -8,6 +8,17 @@ var app = (function () {
     }
     
     var stompClient = null;
+    
+    var pointMouse = function(){
+        if (window.PointerEvent){
+            canvas.addEventListener("pointerdown", event => {
+                const pt = getMousePosition(event);
+                addPointToCanvas(pt);
+                //publicar el evento
+                stompClient.send("/topic/newpoint", {}, JSON.stringify(pt));
+            });
+        }
+    }
 
     var addPointToCanvas = function (point) {        
         var canvas = document.getElementById("canvas");
@@ -39,6 +50,7 @@ var app = (function () {
             stompClient.subscribe('/topic/newpoint', function (eventbody) {
                 var theObject = JSON.parse(eventbody.body);
                 alert(theObject);
+                addPointToCanvas(theObject);
             });
         });
 
@@ -50,7 +62,7 @@ var app = (function () {
 
         init: function () {
             var can = document.getElementById("canvas");
-            
+            pointMouse();
             //websocket connection
             connectAndSubscribe();
         },
