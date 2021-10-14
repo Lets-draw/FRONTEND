@@ -6,7 +6,8 @@ var app = (function () {
             this.y=y;
         }        
     }
-    
+    var id = null;
+    var id2 = document.querySelector('#ID');
     var stompClient = null;
     
     var pointMouse = function(){
@@ -18,6 +19,19 @@ var app = (function () {
                 stompClient.send("/topic/newpoint", {}, JSON.stringify(pt));
             });
         }
+        if( id2 ) input.addEventListener('change', setId);
+        const eventCanvas = (window.PointerEvent)?'pointerdown':'mousedown';
+        canvas.addEventListener(eventCanvas, eventClick);
+    }
+    
+    var setId = function(event){
+        id = event.target.value;
+    }
+
+    var eventClick = function (event){
+        const pt = getMousePosition(event);
+        addPointToCanvas(pt);
+        if(id) stompClient.send(`/topic/newpoint.${id}`, {}, JSON.stringify(pt));
     }
 
     var addPointToCanvas = function (point) {        
@@ -47,7 +61,7 @@ var app = (function () {
         //subscribe to /topic/TOPICXX when connections succeed
         stompClient.connect({}, function (frame) {
             console.log('Connected: ' + frame);
-            stompClient.subscribe('/topic/newpoint', function (eventbody) {
+            stompClient.subscribe(`/topic/newpoint.${id}`, function (eventbody) {
                 var theObject = JSON.parse(eventbody.body);
                 alert(theObject);
                 addPointToCanvas(theObject);
@@ -73,7 +87,7 @@ var app = (function () {
             addPointToCanvas(pt);
 
             //publicar el evento
-             stompClient.send("/topic/newpoint", {}, JSON.stringify(pt));
+             stompClient.send(`/topic/newpoint.${id}`, {}, JSON.stringify(pt));
         },
 
         disconnect: function () {
@@ -82,6 +96,11 @@ var app = (function () {
             }
             setConnected(false);
             console.log("Disconnected");
+        },
+        
+        publishDrawing( currentId ){
+            id = currentId;
+            connectAndSubscribe();
         }
     };
 
