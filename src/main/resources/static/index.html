@@ -15,24 +15,41 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="/webjars/jquery/jquery.min.js"></script>
-        <script src="/webjars/sockjs-client/sockjs.min.js"></script>
-        <script src="/webjars/stomp-websocket/stomp.min.js"></script>
-        <script src="/app.js"></script>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Let´s Draw</title>
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="/app.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
 
-    </head>
 
-    <body onload="app.init()">
-        ID:<input id="ID" type="number"/>
-        <button onclick="app.publishDrawing($('#ID').val())">Conectarse</button>
-        <!--X:<input id="x" type="number"/>
-        Y:<input id="y" type="number"/>      -->  
-        <!--<button onclick="app.publishPoint($('#x').val(),$('#y').val())">Send point</button>-->
+<div id="relojBox" >
+    <p id="reloj"></p>
+</div>
+<div id="main">
+<div id="points" class="scrollableBox"><p align="center">PUNTOS</p></div>
+    <div id="canvas2" style="text-align: center">
+        <h1 id="wordToGuess"></h1>
         <canvas id="canvas" width="800" height="600"></canvas>
-    </body>
+    </div>
+<div class="chat">
+    <p align="center">CHAT</p>
+    <div style="height: 70%; border:solid black 1px">
+        <div id="mensajes" class="scrollableBox"></div>
+    </div>
+    <label for="html5colorpicker">Color : </label>
+    <input type="color" id="html5colorpicker" value="#000000" class="button">
+    <form style="text-align: center" onsubmit="return false;">
+        <input id="message" >
+        <button type="submit" id="send" class="button" onclick="sendMessage()">Send</button>
+    </form>
+    <!--ID:<input id="ID" type="number"/>
+        <button onclick="app.publishDrawing($('#ID').val())">Conectarse</button>-->
+</div>
+</div>
+</body>
 </html>
