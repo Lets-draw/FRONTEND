@@ -1,0 +1,45 @@
+body { 
+    background-color: #F8B25E;
+ }
+
+div.centrado {
+    text-align: center;
+    margin-top: 5%;
+}
+button
+{
+    margin-top: 1%;
+    background-color:#246355 ;
+    color: white;
+    font-size: 20px;
+  line-height: 50px;
+  text-align: center;
+  width: 200px;
+  height: 50px;
+  border-radius: 12px;
+}
+input.btn
+{
+  margin-top: 5%;
+}
+img
+{
+  margin-top: 5%;
+}
+
+label{
+  color: #246355;
+  font-size: 20px;
+  font-weight: bold;
+}
+select
+{
+  background-color: #246355 ;
+  color: white;
+  font-size: 17px;
+}
+input{
+  background-color:#246355 ;
+  color: white;
+  font-size: 17px;
+}
