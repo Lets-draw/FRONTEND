@@ -105,3 +105,11 @@ var app = (function () {
     };
 
 })();
+function myFunction() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const page_type = urlParams.get('id');
+    document.getElementById("sala").innerText="ID sala : "+page_type;
+    console.log(page_type);
+}

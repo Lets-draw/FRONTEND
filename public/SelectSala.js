@@ -40,6 +40,6 @@ async function Roomsjson()
 }
 
 function myFunction(x) {
-  alert("Row index is: " + x);
+  window.location.replace("http://localhost:3000/partida.html?id="+x);
 }
 
