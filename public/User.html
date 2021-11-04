@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="User.css">
+    <title>Let´s Draw</title>
+    <div align="center"><img id="logo" src="logoEdit.jpg" /></div>
+    <script src="/User.js"></script>
+  </head>
+  <body>
+      <div class="centrado">
+       <!-- <label>Nombre :</label>-->
+        <input id="Nombre" class="Nombre" placeholder="Nombre" required="required">
+      </div>
+      
+      <div class="img">
+              <img src="edna.png"  alt="Fjords" width="300" height="200" onclick="setName('edna.png')">
+      </div>
+
+      <div class="img">
+              <img src="bob.png" alt="Forest" width="300" height="200" onclick="setName('bob.png')">
+      </div>
+
+      <div class="img">
+              <img src="mew.png" alt="Northern Lights" width="300" height="200" onclick="setName('mew.png')">
+      </div>
+
+      <div class="img">
+          <img src="patrick.png" alt="Mountains" width="300" height="200" onclick="setName('patrick.png')">
+      </div>
+      <div class="centrado">
+          <button onclick="CreateUser()" id="boton" hidden disabled>Iniciar</button>
+      </div>
+  </body>
+</html>

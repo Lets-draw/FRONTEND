@@ -1,4 +1,7 @@
-body { background-color: #F8B25E; }
+body { 
+    background-color: #F8B25E;
+    font-family: 'Noto Serif', serif;
+}
 
 #canvas {
     overflow:hidden;
@@ -41,6 +44,7 @@ body { background-color: #F8B25E; }
     height: 550px;
     width: 325px;
     border-radius: 21px 28px 28px 28px;
+    font-family: 'Noto Serif', serif;
 }
 
 
@@ -53,11 +57,12 @@ body { background-color: #F8B25E; }
     height: 110px;
     width: 225px;
     border-radius: 21px 28px 28px 28px;
-
+    font-family: 'Noto Serif', serif;
 }
 
 .button {
     margin: 10px;
+    font-family: 'Noto Serif', serif;
 }
 #html5colorpicker {
 
@@ -71,6 +76,7 @@ body { background-color: #F8B25E; }
 
 .myPlayer {
     color: green;
+    font-family: 'Noto Serif', serif;
 }
 
 .otherPlayer{

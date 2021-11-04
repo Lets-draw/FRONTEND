@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="CreateSala.css">
     <title>Let´s Draw</title>
     <div align="center"><img id="logo" src="logoEdit.jpg" /></div>
@@ -21,24 +24,28 @@
   </head>
   <body>
       <div class="centrado">
-        <label>Nombre :</label>
-        <input class="btn" ></button>
+       <!-- <label>Nombre :</label>-->
+        <input id="Nombre" class="Nombre" placeholder="Nombre" required="required">
+      </div>
+      <div class="centrado">
+        <!--<label>Jugadores :</label>-->
+        <input class="Numj" id="numJ" placeholder="Jugadores (max 10)" type="number" min="0" max="10" required="required">
       </div>
       <div class="centrado">
         <label>Lenguaje :</label>
         <select name="Lenguaje" id="Lenguaje">
-          <option value="volvo">Español</option>
-          <option value="saab">Ingles</option>
+          <option value="Español">Español</option>
+          <option value="Ingles">Ingles</option>
         </select>
       </div>
       <div id="form2" class="centrado">
-        <input type="checkbox" name="Español" onchange="validacion('form2', this)" value="Español"/>
+        <input type="checkbox" name="Español" onchange="validacion('form2', this)" value="Privado" id="priv"/>
         <label>Privado</label>
-        <input type="checkbox" name="Ingles" onchange="validacion('form2', this)" value="Ingles"/>
+        <input type="checkbox" name="Ingles" onchange="validacion('form2', this)" value="Publico" id="pub"/>
         <label>Publico</label>
         </div>
       <div class="centrado">
-        <button onclick="GoToSelectSala()" >CREAR</button>
+        <button onclick="CreateSala()" >CREAR</button>
       </div>
   </body>
 </html>

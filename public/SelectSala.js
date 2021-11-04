@@ -39,7 +39,17 @@ async function Roomsjson()
   localStorage.setItem("room",response);
 }
 
-function myFunction(x) {
+async function myFunction(x) {
+    var skin = localStorage.getItem("skin");
+    var nombre =localStorage.getItem("usuario");
+    var response2 = await  fetch(`http://localhost:8081/addUser/` + nombre + '/' + skin+'/'+x).then((res) => {
+        if (!res.ok)
+            throw new Error("Response is NOT ok");
+        console.log(res);
+        //return res.json();
+        return res;
+    }
+    );
   window.location.replace("http://localhost:3000/partida.html?id="+x);
 }
 

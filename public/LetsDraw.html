@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="LetsDraw.css">
     <title>Let´s Draw</title>
     <div align="center"><img id="logo" src="logoEdit.jpg" /></div>
     <script src="/LetsDraw.js"></script>
   </head>
   <body>
-      <div class="centrado">
-        <button class="btn" onclick="GoToCreateSala()" >CREAR</button>
+      <div class="container">
+          <div class="centrado">
+              <button class="btn" onclick="GoToCreateSala()" >CREAR</button>
+          </div>
+          <div class="centrado">
+              <button >UNIRSE</button>
+          </div>
+          <div class="centrado">
+              <button onclick="GoToSelectSala()" >LOBBY</button>
+          </div>
       </div>
-      <div class="centrado">
-        <button >UNIRSE</button>
-      </div>
-      <div class="centrado">
-        <button onclick="GoToSelectSala()" >LOBBY</button>
-      </div>
+      
   </body>
 </html>
