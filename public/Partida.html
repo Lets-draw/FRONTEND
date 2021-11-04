@@ -22,9 +22,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
-    <script src="/webjars/jquery/jquery.min.js"></script>
-    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
-    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
     <script src="/app.js"></script>
     <link rel="stylesheet" type="text/css" href="index.css">
 </head>
@@ -34,7 +31,20 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <p id="reloj"></p>
 </div>
 <div id="main">
-<div id="points" class="scrollableBox"><p align="center">PUNTOS</p></div>
+<div id="points" class="scrollableBox"><p align="center"></p>
+    <label class="titulo">PUNTOS</label>
+    <label class="user"></label><br>
+    <label class="user" id="1"></label><br>
+    <label class="user" id="2"></label><br>
+    <label class="user" id="3"></label><br>
+    <label class="user" id="4"></label><br>
+    <label class="user" id="5"></label><br>
+    <label class="user" id="6"></label><br>
+    <label class="user" id="7"></label><br>
+    <label class="user" id="8"></label><br>
+    <label class="user" id="9"></label><br>
+    <label class="user" id="10"></label><br>
+</div>
     <div id="canvas2" style="text-align: center">
         <h1 id="wordToGuess"></h1>
         <canvas id="canvas" width="800" height="600"></canvas>

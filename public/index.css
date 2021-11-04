@@ -13,6 +13,7 @@ body {
     height: 550px;
     width: 760px;
     border-radius: 21px 28px 28px 28px;
+    border-color: #246355;
 }
 
 #points {
@@ -24,6 +25,7 @@ body {
     height: 550px;
     width: 225px;
     border-radius: 21px 28px 28px 28px;
+    border-color: #246355;
 }
 
 #letrero {
@@ -45,6 +47,7 @@ body {
     width: 325px;
     border-radius: 21px 28px 28px 28px;
     font-family: 'Noto Serif', serif;
+    border-color: #246355;
 }
 
 
@@ -93,4 +96,11 @@ body {
 }
 #wordToGuess {
     display: inline-block;
+}
+.titulo{
+    font-family: 'Noto Serif', serif;
+    margin-left: 80px;
+}
+.user{
+    margin-bottom: 200px;
 }

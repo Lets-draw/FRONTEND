@@ -1,4 +1,4 @@
-var app = (function () {
+/*var app = (function () {
 
     class Point{
         constructor(x,y){
@@ -104,12 +104,27 @@ var app = (function () {
         }
     };
 
-})();
-function myFunction() {
+})();*/
+async function myFunction() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
 
     const page_type = urlParams.get('id');
     document.getElementById("sala").innerText="ID sala : "+page_type;
     console.log(page_type);
+    
+    var response=    await  fetch(`http://localhost:8081/getRoomInfo/`+page_type).then((res)=>{
+      if (!res.ok) throw new Error("Response is NOT ok");
+      return res.json();
+  }
+  );
+  var str = response;
+  console.log(response);
+    for(var i = 0;i<str.user.length;i++)
+   {
+       console.log(str.user[i].nikname);
+       console.log(document.getElementById(i+1));
+      document.getElementById(i+1).textContent= str.user[i].nikname;
+
+   }
 }
