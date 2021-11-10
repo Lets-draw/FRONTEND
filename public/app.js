@@ -120,11 +120,17 @@ async function myFunction() {
   );
   var str = response;
   console.log(response);
-    for(var i = 0;i<str.user.length;i++)
+    //for(var i = 0;i<str.user.length;i++)
+    for(var i = 0;i<2;i++)
    {
        console.log(str.user[i].nikname);
        console.log(document.getElementById(i+1));
-      document.getElementById(i+1).textContent= str.user[i].nikname;
+       var nombre = str.user[i].nikname;
+       var skin = str.user[i].skin;
+       var points = str.user[i].points;
+       var tblRow = "<tr><td><img class='icono' src='"+skin+"'/></td><td>"+nombre+"</td><td>"+points+"</td></tr>"
+       $(tblRow).appendTo("#userdata tbody");
+      //document.getElementById(i+1).textContent= string;
 
    }
 }

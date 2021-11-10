@@ -22,6 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="/app.js"></script>
     <link rel="stylesheet" type="text/css" href="index.css">
 </head>
@@ -33,7 +34,51 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 <div id="main">
 <div id="points" class="scrollableBox"><p align="center"></p>
     <label class="titulo">PUNTOS</label>
-    <label class="user"></label><br>
+    <table id= "userdata">
+			<thead>
+				<tr>
+					<th>Icono</th><th>Nombre</th><th>Puntos</th>
+				</tr>
+			</thead>
+                        <tbody>
+                            <!--<tr>
+                                <td><img class='icono' src='bob.png'/></td><td>aaaaaaaaaaaaa</td><td>0</td>
+                            </tr>-->
+
+                            <!--<tr class="user" id="1">
+                                <td>1</td><td>Sala de ejemplo 1</td><td>10/10</td>
+                            </tr>
+                            <tr class="user" id="2">
+                                
+                            </tr>
+                            <tr class="user" id="3">
+                                
+                            </tr>
+                            <tr class="user" id="4"> 
+                               
+                            </tr>
+                            <tr class="user" id="5">
+                               
+                            </tr >
+                            <tr class="user" id="6">
+                                
+                            </tr>
+                            <tr class="user" id="7">
+                               
+                            </tr>
+                            <tr class="user" id="8">
+                                
+                            </tr>
+                            <tr class="user" id="9">
+                                
+                            </tr>
+                            <tr class="user" id="10">
+                                
+                            </tr>-->
+                        </tbody>
+		</table>
+    
+    <!--<label class="user"></label><br>
     <label class="user" id="1"></label><br>
     <label class="user" id="2"></label><br>
     <label class="user" id="3"></label><br>
@@ -43,7 +88,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <label class="user" id="7"></label><br>
     <label class="user" id="8"></label><br>
     <label class="user" id="9"></label><br>
-    <label class="user" id="10"></label><br>
+    <label class="user" id="10"></label><br>-->
 </div>
     <div id="canvas2" style="text-align: center">
         <h1 id="wordToGuess"></h1>
