@@ -16,98 +16,86 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Let´s Draw</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="/app.js"></script>
-    <link rel="stylesheet" type="text/css" href="index.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Let´s Draw</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="/app.js"></script>
+        <link rel="stylesheet" type="text/css" href="index.css">
+    </head>
 
-<body onload="myFunction()">
-<div id="relojBox" >
-    <p id="reloj"></p>
-</div>
-<div id="main">
-<div id="points" class="scrollableBox"><p align="center"></p>
-    <label class="titulo">PUNTOS</label>
-    <table id= "userdata">
-			<thead>
-				<tr>
-					<th>Icono</th><th>Nombre</th><th>Puntos</th>
-				</tr>
-			</thead>
-                        <tbody>
-                            <!--<tr>
-                                <td><img class='icono' src='bob.png'/></td><td>aaaaaaaaaaaaa</td><td>0</td>
-                            </tr>-->
+    <body onload="myFunction()">
+        <div id="relojBox" >
+            <p id="reloj"></p>
+        </div>
+        <div id="main">
+            <div id="points" class="scrollableBox"><p align="center"></p>
+                <table id= "userdata">
+                    <thead>
+                        <tr>
+                            <th>Icono</th><th>Nombre</th><th>Puntos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--<tr>
+                            <td><img class='icono' src='bob.png'/></td><td>aaaaaaaaaaaaa</td><td>0</td>
+                        </tr>-->
 
-                            <!--<tr class="user" id="1">
-                                <td>1</td><td>Sala de ejemplo 1</td><td>10/10</td>
-                            </tr>
-                            <tr class="user" id="2">
-                                
-                            </tr>
-                            <tr class="user" id="3">
-                                
-                            </tr>
-                            <tr class="user" id="4"> 
-                               
-                            </tr>
-                            <tr class="user" id="5">
-                               
-                            </tr >
-                            <tr class="user" id="6">
-                                
-                            </tr>
-                            <tr class="user" id="7">
-                               
-                            </tr>
-                            <tr class="user" id="8">
-                                
-                            </tr>
-                            <tr class="user" id="9">
-                                
-                            </tr>
-                            <tr class="user" id="10">
-                                
-                            </tr>-->
-                        </tbody>
-		</table>
-    
-    <!--<label class="user"></label><br>
-    <label class="user" id="1"></label><br>
-    <label class="user" id="2"></label><br>
-    <label class="user" id="3"></label><br>
-    <label class="user" id="4"></label><br>
-    <label class="user" id="5"></label><br>
-    <label class="user" id="6"></label><br>
-    <label class="user" id="7"></label><br>
-    <label class="user" id="8"></label><br>
-    <label class="user" id="9"></label><br>
-    <label class="user" id="10"></label><br>-->
-</div>
-    <div id="canvas2" style="text-align: center">
-        <h1 id="wordToGuess"></h1>
-        <canvas id="canvas" width="800" height="600"></canvas>
-    </div>
-<div class="chat">
-    <p align="center" id="sala">CHAT</p>
-    <div style="height: 70%; border:solid black 1px">
-        <div id="mensajes" class="scrollableBox"></div>
-    </div>
-    <label for="html5colorpicker">Color : </label>
-    <input type="color" id="html5colorpicker" value="#000000" class="button">
-    <form style="text-align: center" onsubmit="return false;">
-        <input id="message" >
-        <button type="submit" id="send" class="button" onclick="sendMessage()">Send</button>
-    </form>
-    <!--ID:<input id="ID" type="number"/>
-        <button onclick="app.publishDrawing($('#ID').val())">Conectarse</button>-->
-</div>
-</div>
-</body>
+                        <!--<tr class="user" id="1">
+                            <td>1</td><td>Sala de ejemplo 1</td><td>10/10</td>
+                        </tr>
+                        <tr class="user" id="2">
+                            
+                        </tr>
+                        <tr class="user" id="3">
+                            
+                        </tr>
+                        <tr class="user" id="4"> 
+                           
+                        </tr>
+                        <tr class="user" id="5">
+                           
+                        </tr >
+                        <tr class="user" id="6">
+                            
+                        </tr>
+                        <tr class="user" id="7">
+                           
+                        </tr>
+                        <tr class="user" id="8">
+                            
+                        </tr>
+                        <tr class="user" id="9">
+                            
+                        </tr>
+                        <tr class="user" id="10">
+                            
+                        </tr>-->
+                    </tbody>
+                </table>
+
+            </div>
+            <div >
+                <p  align="center" id="word">z</p>
+                <canvas id="canvas" ></canvas>
+            </div>
+            <div class="chat">
+                <p align="center" id="sala">CHAT</p>
+                <div style="height: 70%; border:solid black 1px">
+                    <div id="mensajes" class="scrollableBox"></div>
+                </div>
+                <label for="html5colorpicker">Color : </label>
+                <input type="color" id="html5colorpicker" value="#000000" class="button">
+                <form style="text-align: center" onsubmit="return false;">
+                    <input id="message" >
+                    <button type="submit" id="send" class="button" onclick="sendMessage()">Send</button>
+                </form>
+                <!--ID:<input id="ID" type="number"/>
+                    <button onclick="app.publishDrawing($('#ID').val())">Conectarse</button>-->
+            </div>
+        </div>
+    </body>
 </html>
