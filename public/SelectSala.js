@@ -50,6 +50,6 @@ async function myFunction(x) {
         return res;
     }
     );
-  window.location.replace("https://lets-draw-front.herokuapp.com/partida.html?id="+x);
+  window.location.replace("https://lets-draw-front.herokuapp.com/Partida.html?id="+x);
 }
 

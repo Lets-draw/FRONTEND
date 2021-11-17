@@ -14,6 +14,6 @@ async function JoinSala() {
     }
     );
     console.log(response2);
-    window.location.replace("https://lets-draw-front.herokuapp.com/partida.html?id="+response);
+    window.location.replace("https://lets-draw-front.herokuapp.com/Partida.html?id="+response);
 }
 

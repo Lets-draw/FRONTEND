@@ -101,7 +101,7 @@ async function myFunction() {
     document.getElementById("sala").innerText="ID sala : "+page_type;
     console.log(page_type);
     
-    var response=    await  fetch(`http://localhost:8081/getRoomInfo/`+page_type).then((res)=>{
+    var response=    await  fetch(`https://lets-draw-back.herokuapp.com/getRoomInfo/`+page_type).then((res)=>{
       if (!res.ok) throw new Error("Response is NOT ok");
       return res.json();
   }
@@ -119,7 +119,7 @@ async function myFunction() {
       //document.getElementById(i+1).textContent= string;
 
    }
-   var getPalabra=  await  fetch(`http://localhost:8081/getWord/`+page_type+'/').then((rest)=>{
+   var getPalabra=  await  fetch(`https://lets-draw-back.herokuapp.com/getWord/`+page_type+'/').then((rest)=>{
       if (!rest.ok) throw new Error("Response is NOT ok");
       return rest.json();
   }
