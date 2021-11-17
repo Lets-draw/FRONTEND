@@ -93,10 +93,7 @@
         }
     };
 })();*/
-var canvas ;
-var ctx ;
-var rect; 
-var x = 0, y = 0, dibujando = false, color = 'black', grosor = 1;
+
 async function myFunction() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -138,11 +135,10 @@ async function myFunction() {
     console.log(getPalabra.name)
     document.getElementById("word").innerText = "Palabra : " + getPalabra.name;
     //window.setInterval (myFunction(), 1000);
-    canvas = document.getElementById('canvas');
-    ctx = canvas.getContext('2d');
-    rect = canvas.getBoundingClientRect();
-}
-  
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    var rect = canvas.getBoundingClientRect();
+    var x = 0, y = 0, dibujando = false, color = 'black', grosor = 1;
     function defcolor(c) {
         color = c;
     }
@@ -181,3 +177,4 @@ async function myFunction() {
         ctx.stroke();
         ctx.closePath();
     }
+}
