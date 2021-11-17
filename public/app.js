@@ -116,7 +116,8 @@ async function myFunction() {
        var skin = str.user[i].skin;
        var points = str.user[i].points;
        var tblRow = "<tr><td><img class='icono' src='"+skin+"'/></td><td>"+nombre+"</td><td>"+points+"</td></tr>"
-       $(tblRow).appendTo("#userdata tbody");
+        $(tblRow).remove(); 
+        $(tblRow).appendTo("#userdata tbody");
       //document.getElementById(i+1).textContent= string;
 
    }
