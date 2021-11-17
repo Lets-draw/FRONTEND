@@ -80,14 +80,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             </div>
             <div >
                 <p  align="center" id="word">z</p>
-                <canvas id="canvas" ></canvas>
+                <canvas id="canvas" width="500" height="500"></canvas>
             </div>
             <div class="chat">
                 <p align="center" id="sala">CHAT</p>
                 <div style="height: 70%; border:solid black 1px">
                     <div id="mensajes" class="scrollableBox"></div>
                 </div>
-                <label for="html5colorpicker">Color : </label>
+                <label for="color">Color : </label>
                 <input type="color" id="color" value="#000000" class="button" oninput="defcolor(this.value);">
                 <input type="range" id="grosor"  oninput="defgrosor(this.value);" min="1" max="5" value="1">
                 <form style="text-align: center" onsubmit="return false;">
