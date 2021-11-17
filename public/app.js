@@ -105,6 +105,7 @@ async function myFunction() {
       if (!res.ok) throw new Error("Response is NOT ok");
       return res.json();
   }
+          
   );
   var str = response;
   console.log(response);
@@ -127,4 +128,5 @@ async function myFunction() {
   console.log(getPalabra);
   console.log(getPalabra.name)
    document.getElementById("word").innerText = "Palabra : "+ getPalabra.name;
+   window.setInterval (myFunction(), 1000);
 }
