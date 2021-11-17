@@ -1,7 +1,7 @@
 async function getRooms() 
 {
     //Roomsjson() ;
-    var response=    await  fetch(`http://localhost:8081/rooms`).then((res)=>{
+    var response=    await  fetch(`https://lets-draw-back.herokuapp.com/rooms`).then((res)=>{
       if (!res.ok) throw new Error("Response is NOT ok");
       return res.json();
   }
@@ -31,7 +31,7 @@ async function getRooms()
 }
 async function Roomsjson() 
 {
-  var response=    await  fetch(`http://localhost:8081/rooms`).then((res)=>{
+  var response=    await  fetch(`https://lets-draw-back.herokuapp.com/rooms`).then((res)=>{
       if (!res.ok) throw new Error("Response is NOT ok");
       return res.json();
   }
@@ -42,7 +42,7 @@ async function Roomsjson()
 async function myFunction(x) {
     var skin = localStorage.getItem("skin");
     var nombre =localStorage.getItem("usuario");
-    var response2 = await  fetch(`http://localhost:8081/addUser/` + nombre + '/' + skin+'/'+x).then((res) => {
+    var response2 = await  fetch(`https://lets-draw-back.herokuapp.com/addUser/` + nombre + '/' + skin+'/'+x).then((res) => {
         if (!res.ok)
             throw new Error("Response is NOT ok");
         console.log(res);
@@ -50,6 +50,6 @@ async function myFunction(x) {
         return res;
     }
     );
-  window.location.replace("http://localhost:3000/partida.html?id="+x);
+  window.location.replace("https://lets-draw-front.herokuapp.com/partida.html?id="+x);
 }
 

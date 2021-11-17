@@ -16,5 +16,5 @@ async function CreateUser() {
   );
     console.log(response);
     window.location.replace("http://localhost:3000/LetsDraw.html");*/
-    window.location.replace("http://localhost:3000/LetsDraw.html");
+    window.location.replace("https://lets-draw-front.herokuapp.com/LetsDraw.html");
 }

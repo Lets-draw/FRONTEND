@@ -1,11 +1,10 @@
-
 function GoToSelectSala() {
-  window.location.replace("http://localhost:3000/SelectSala.html");
+  window.location.replace("https://lets-draw-front.herokuapp.com/SelectSala.html");
 }
 function GoToCreateSala() {
-  window.location.replace("http://localhost:3000/CreateSala.html");
+  window.location.replace("https://lets-draw-front.herokuapp.com/CreateSala.html");
 }
 function GoToJoinSala() {
-  window.location.replace("http://localhost:3000/JoinSala.html");
+  window.location.replace("https://lets-draw-front.herokuapp.com/JoinSala.html");
 }
 
