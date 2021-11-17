@@ -88,8 +88,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                     <div id="mensajes" class="scrollableBox"></div>
                 </div>
                 <label for="html5colorpicker">Color : </label>
-                <input type="color" id="color" value="#000000" class="button" oninput="color(this.value);">
-                <input type="range" id="grosor"  oninput="color(this.value);" min="1" max="5" value="1">
+                <input type="color" id="color" value="#000000" class="button" oninput="defcolor(this.value);">
+                <input type="range" id="grosor"  oninput="defgrosor(this.value);" min="1" max="5" value="1">
                 <form style="text-align: center" onsubmit="return false;">
                     <input id="message" >
                     <button type="submit" id="send" class="button" onclick="sendMessage()">Send</button>
