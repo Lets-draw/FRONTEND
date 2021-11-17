@@ -178,3 +178,9 @@ async function myFunction() {
         ctx.closePath();
     }
 }
+function defcolor(c) {
+    color = c;
+}
+function defgrosor(g) {
+    grosor = g;
+}
