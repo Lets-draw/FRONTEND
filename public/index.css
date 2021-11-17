@@ -3,10 +3,13 @@ body {
     font-family: 'Noto Serif', serif;
 }
 /*
+overflow:hidden;
+position: fixed;
+*/
 #canvas {
-    overflow:hidden;
-	background-color: #FFFFFF;
-    position: fixed;
+    
+    background-color: #FFFFFF;
+    
     top: 10%;
     left: 20%;
     border: solid 5px;
@@ -15,7 +18,7 @@ body {
     border-radius: 21px 28px 28px 28px;
     border-color: #246355;
 }
-*/
+
 #points {
 	background-color: #FFFFFF;
     position: fixed;
