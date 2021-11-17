@@ -116,11 +116,11 @@ async function myFunction() {
        var skin = str.user[i].skin;
        var points = str.user[i].points;
        var tblRow = "<tr><td><img class='icono' src='"+skin+"'/></td><td>"+nombre+"</td><td>"+points+"</td></tr>"
-        var table = document.getElementById('userdata');
+        /*var table = document.getElementById('userdata');
         var rowCount = table.rows.length;
-        for (var i = 0; i < rowCount; i++) {
+        for (var i = 1; i < rowCount; i++) {
             table.deleteRow(i);
-        } 
+        } */
         $(tblRow).appendTo("#userdata tbody");
       //document.getElementById(i+1).textContent= string;
 
@@ -133,5 +133,5 @@ async function myFunction() {
   console.log(getPalabra);
   console.log(getPalabra.name)
    document.getElementById("word").innerText = "Palabra : "+ getPalabra.name;
-   window.setInterval (myFunction(), 1000);
+   //window.setInterval (myFunction(), 1000);
 }
