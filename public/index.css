@@ -2,7 +2,7 @@ body {
     background-color: #F8B25E;
     font-family: 'Noto Serif', serif;
 }
-
+/*
 #canvas {
     overflow:hidden;
 	background-color: #FFFFFF;
@@ -15,7 +15,7 @@ body {
     border-radius: 21px 28px 28px 28px;
     border-color: #246355;
 }
-
+*/
 #points {
 	background-color: #FFFFFF;
     position: fixed;
