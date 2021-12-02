@@ -180,6 +180,7 @@ async function myFunction() {
     
 }
 async function sendMessage() {
+     const urlParams = new URLSearchParams(queryString);
         const page_type = urlParams.get('id');
         var nombre =localStorage.getItem("usuario");
         var response=    await  fetch(`https://lets-draw-back.herokuapp.com/sendMessage/`+page_type+`/`+nombre+`/`+document.getElementById("message").value+`/`).then((res)=>{
