@@ -180,6 +180,7 @@ async function myFunction() {
     
 }
 async function sendMessage() {
+    const queryString = window.location.search;
      const urlParams = new URLSearchParams(queryString);
         const page_type = urlParams.get('id');
         var nombre =localStorage.getItem("usuario");
