@@ -91,10 +91,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 <label for="color">Color : </label>
                 <input type="color" id="color" value="#000000" class="button" onchange="defcolor(this.value);">
                 <input type="range" id="grosor"   min="1" max="5" value="1" onchange="defgrosor(this.value);">
-                <form style="text-align: center" onsubmit="return false;">
+                 <input id="message" >
+                 <button  id="send" class="button" onclick="sendMessage()">Send</button>
+                <!--<form style="text-align: center" onsubmit="return false;">
                     <input id="message" >
                     <button type="submit" id="send" class="button" onclick="sendMessage()">Send</button>
-                </form>
+                </form>-->
                 <!--ID:<input id="ID" type="number"/>
                     <button onclick="app.publishDrawing($('#ID').val())">Conectarse</button>-->
             </div>
