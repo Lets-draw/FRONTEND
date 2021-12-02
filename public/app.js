@@ -177,4 +177,17 @@ async function myFunction() {
         ctx.stroke();
         ctx.closePath();
     }
+    async function sendMessage(x1, y1, x2, y2) {
+        const page_type = urlParams.get('id');
+        var nombre =localStorage.getItem("usuario");
+        var response=    await  fetch(`https://lets-draw-back.herokuapp.com/sendMessage/`+page_type+`/`+nombre+`/`+document.getElementById("message").value+`/`).then((res)=>{
+            if (!res.ok) throw new Error("Response is NOT ok");
+            return res.json();
+        });
+        var responseM=    await  fetch(`https://lets-draw-back.herokuapp.com/getMessages/`+page_type+`/`).then((res)=>{
+            if (!res.ok) throw new Error("Response is NOT ok");
+            return res.json();
+        });
+        console.log(responseM);
+    }
 }
