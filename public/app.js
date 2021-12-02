@@ -177,7 +177,7 @@ async function myFunction() {
         ctx.stroke();
         ctx.closePath();
     }
-    async function sendMessage(x1, y1, x2, y2) {
+    async function sendMessage() {
         const page_type = urlParams.get('id');
         var nombre =localStorage.getItem("usuario");
         var response=    await  fetch(`https://lets-draw-back.herokuapp.com/sendMessage/`+page_type+`/`+nombre+`/`+document.getElementById("message").value+`/`).then((res)=>{
