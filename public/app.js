@@ -186,7 +186,7 @@ async function sendMessage() {
         var nombre =localStorage.getItem("usuario");
         var response=    await  fetch(`https://lets-draw-back.herokuapp.com/sendMessage/`+page_type+`/`+nombre+`/`+document.getElementById("message").value+`/`).then((res)=>{
             if (!res.ok) throw new Error("Response is NOT ok");
-            return res.json();
+            return res;
         });
         var responseM=    await  fetch(`https://lets-draw-back.herokuapp.com/getMessages/`+page_type+`/`).then((res)=>{
             if (!res.ok) throw new Error("Response is NOT ok");
