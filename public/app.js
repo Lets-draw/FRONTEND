@@ -232,6 +232,9 @@ function drawMessages(response){
    numMessages=str.messages.length;
 }
 async function getUsers(response){
+     const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const page_type = urlParams.get('id');
    var response=    await  fetch(`https://lets-draw-back.herokuapp.com/getRoomInfo/`+page_type).then((res)=>{
       if (!res.ok) throw new Error("Response is NOT ok");
       return res.json();
