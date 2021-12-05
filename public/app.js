@@ -218,9 +218,9 @@ function drawMessages(response){
    for(var i = numMessages;i<str.messages.length;i++)
    {
        console.log(str.user[i].user);
-       console.log(str.user[i].message);
-       var nombre = str.user[i].user;
-       var message = str.user[i].message;
+       console.log(str.messages[i].message);
+       var nombre = str.messages[i].user;
+       var message = str.messages[i].message;
        //var tblRow = "<tr><td><img class='icono' src='"+skin+"'/></td><td>"+nombre+"</td><td>"+points+"</td></tr>"
         /*var table = document.getElementById('userdata');
         var rowCount = table.rows.length;
