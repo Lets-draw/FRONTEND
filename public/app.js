@@ -226,16 +226,12 @@ function drawMessages(response){
         document.getElementById("mensajes").appendChild(node);
         var br = document.createElement("br");
         document.getElementById("mensajes").appendChild(br);
-       
-       //var tblRow = "<tr><td><img class='icono' src='"+skin+"'/></td><td>"+nombre+"</td><td>"+points+"</td></tr>"
-        /*var table = document.getElementById('userdata');
-        var rowCount = table.rows.length;
-        for (var i = 1; i < rowCount; i++) {
-            table.deleteRow(i);
-        } */
-        //$(tblRow).appendTo("#userdata tbody");
-      //document.getElementById(i+1).textContent= string;
-
    }
    numMessages=str.messages.length;
 }
+var wage = document.getElementById("message");
+wage.addEventListener("keydown", function (e) {
+    if (e.code === "Enter") {  //checks whether the pressed key is "Enter"
+        getMessages();
+    }
+});
