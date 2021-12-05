@@ -177,7 +177,7 @@ async function myFunction() {
         ctx.stroke();
         ctx.closePath();
     }
-    
+    setInterval('getMessages()',1000);
 }
 async function sendMessage() {
     const queryString = window.location.search;
@@ -193,4 +193,14 @@ async function sendMessage() {
             return res.json();
         });
         console.log(responseM);
-    }
+}
+async function getMessages() {
+    const queryString = window.location.search;
+     const urlParams = new URLSearchParams(queryString);
+        const page_type = urlParams.get('id');
+        var responseM=    await  fetch(`https://lets-draw-back.herokuapp.com/getMessages/`+page_type+`/`).then((res)=>{
+            if (!res.ok) throw new Error("Response is NOT ok");
+            return res.json();
+        });
+        console.log(responseM);
+}
