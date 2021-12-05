@@ -189,6 +189,7 @@ async function sendMessage() {
             if (!res.ok) throw new Error("Response is NOT ok");
             return res;
         });
+        document.getElementById("message").value="";
         var responseM=    await  fetch(`https://lets-draw-back.herokuapp.com/getMessages/`+page_type+`/`).then((res)=>{
             if (!res.ok) throw new Error("Response is NOT ok");
             return res.json();
@@ -219,6 +220,11 @@ function drawMessages(response){
        console.log(str.messages[i].message);
        var nombre = str.messages[i].user;
        var message = str.messages[i].message;
+       var node = document.createElement("label");
+        var textnode = document.createTextNode(nombre+": " +message);
+        node.appendChild(textnode);
+        document.getElementById("mensajes").appendChild(node);
+       
        //var tblRow = "<tr><td><img class='icono' src='"+skin+"'/></td><td>"+nombre+"</td><td>"+points+"</td></tr>"
         /*var table = document.getElementById('userdata');
         var rowCount = table.rows.length;
