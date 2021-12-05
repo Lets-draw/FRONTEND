@@ -244,7 +244,7 @@ async function getUsers(response){
   var str = response;
   if(numUsers<str.user.length){
         console.log(response);
-        for (var i = 0; i < str.user.length; i++)
+        for (var i = numUsers; i < str.user.length; i++)
         {
             console.log(str.user[i].nikname);
             var nombre = str.user[i].nikname;
