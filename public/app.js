@@ -217,7 +217,7 @@ function drawMessages(response){
   console.log(response);
    for(var i = numMessages;i<str.messages.length;i++)
    {
-       console.log(str.user[i].user);
+       console.log(str.messages[i].user);
        console.log(str.messages[i].message);
        var nombre = str.messages[i].user;
        var message = str.messages[i].message;
