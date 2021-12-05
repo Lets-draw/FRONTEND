@@ -180,6 +180,7 @@ async function myFunction() {
         ctx.closePath();
     }
     setInterval('getMessages()',1000);
+    setInterval('getUsers()',1000);
 }
 async function sendMessage() {
     const queryString = window.location.search;
