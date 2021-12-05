@@ -260,6 +260,7 @@ async function getUsers(response){
             //document.getElementById(i+1).textContent= string;
 
         }
+        numUsers=str.user.length;
   }
   
 }
