@@ -224,6 +224,8 @@ function drawMessages(response){
         var textnode = document.createTextNode(nombre+": " +message);
         node.appendChild(textnode);
         document.getElementById("mensajes").appendChild(node);
+        var br = document.createElement("br");
+        document.getElementById("mensajes").appendChild(br);
        
        //var tblRow = "<tr><td><img class='icono' src='"+skin+"'/></td><td>"+nombre+"</td><td>"+points+"</td></tr>"
         /*var table = document.getElementById('userdata');
