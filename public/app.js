@@ -213,11 +213,11 @@ async function getMessages() {
 }
 function drawMessages(response){
     var str = response;
-  console.log(response);
+  //console.log(response);
    for(var i = numMessages;i<str.messages.length;i++)
    {
-       console.log(str.messages[i].user);
-       console.log(str.messages[i].message);
+       //console.log(str.messages[i].user);
+       //console.log(str.messages[i].message);
        var nombre = str.messages[i].user;
        var message = str.messages[i].message;
        var node = document.createElement("label");
@@ -231,7 +231,7 @@ function drawMessages(response){
 }
 var wage = document.getElementById("message");
 wage.addEventListener("keydown", function (e) {
-    if (e.code === "Enter") {  //checks whether the pressed key is "Enter"
+    if (e.code === 12+1) {  //checks whether the pressed key is "Enter"
         getMessages();
     }
 });
