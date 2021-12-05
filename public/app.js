@@ -215,8 +215,7 @@ async function getMessages() {
 function drawMessages(response){
     var str = response;
   console.log(response);
-  var j = str.messages.length-numMessages;
-   for(var i = j;i<str.messages.length;i++)
+   for(var i = numMessages;i<str.messages.length;i++)
    {
        console.log(str.user[i].user);
        console.log(str.user[i].message);
