@@ -93,7 +93,7 @@
         }
     };
 })();*/
-var numMesaages = 0;
+var numMessages = 0;
 
 async function myFunction() {
     const queryString = window.location.search;
