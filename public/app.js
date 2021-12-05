@@ -194,8 +194,8 @@ async function sendMessage() {
             return res.json();
         });
         console.log(responseM);
-        if(numMessages < response.messages.length){
-            drawMessages(response);
+        if(numMessages < responseM.messages.length){
+            drawMessages(responseM);
         }
 }
 async function getMessages() {
@@ -207,8 +207,8 @@ async function getMessages() {
             return res.json();
         });
         console.log(responseM);
-        if(numMessages < response.messages.length){
-            drawMessages(response);
+        if(numMessages < responseM.messages.length){
+            drawMessages(responseM);
         }
         
 }
