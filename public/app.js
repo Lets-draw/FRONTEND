@@ -94,7 +94,7 @@
     };
 })();*/
 var numMessages = 0;
-
+var numUsers=0;
 async function myFunction() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -111,6 +111,7 @@ async function myFunction() {
   );
   var str = response;
   console.log(response);
+  numUsers=str.user.length;
    for(var i = 0;i<str.user.length;i++)
    {
        console.log(str.user[i].nikname);
@@ -133,7 +134,7 @@ async function myFunction() {
   }
   );
     console.log(getPalabra);
-    console.log(getPalabra.name)
+    console.log(getPalabra.name);
     document.getElementById("word").innerText = "Palabra : " + getPalabra.name;
     //window.setInterval (myFunction(), 1000);
     var canvas = document.getElementById('canvas');
@@ -162,7 +163,7 @@ async function myFunction() {
     });
 
     canvas.addEventListener('mouseup', function (e) {
-        if (dibujando == true) {
+        if (dibujando === true) {
             dibujar(x, y, e.clientX - rect.left, e.clientY - rect.top);
             x = 0;
             y = 0;
@@ -229,9 +230,39 @@ function drawMessages(response){
    }
    numMessages=str.messages.length;
 }
+async function getUsers(response){
+   var response=    await  fetch(`https://lets-draw-back.herokuapp.com/getRoomInfo/`+page_type).then((res)=>{
+      if (!res.ok) throw new Error("Response is NOT ok");
+      return res.json();
+  }
+          
+  );
+  var str = response;
+  if(numUsers<str.user.length){
+        console.log(response);
+        for (var i = 0; i < str.user.length; i++)
+        {
+            console.log(str.user[i].nikname);
+            var nombre = str.user[i].nikname;
+            var skin = str.user[i].skin;
+            var points = str.user[i].points;
+            var tblRow = "<tr><td><img class='icono' src='" + skin + "'/></td><td>" + nombre + "</td><td>" + points + "</td></tr>"
+            /*var table = document.getElementById('userdata');
+             var rowCount = table.rows.length;
+             for (var i = 1; i < rowCount; i++) {
+             table.deleteRow(i);
+             } */
+            $(tblRow).appendTo("#userdata tbody");
+            //document.getElementById(i+1).textContent= string;
+
+        }
+  }
+  
+}
+/*
 var wage = document.getElementById("message");
 wage.addEventListener("keydown", function (e) {
     if (e.code === 13) {  //checks whether the pressed key is "Enter"
         getMessages();
     }
-});
+});*/
