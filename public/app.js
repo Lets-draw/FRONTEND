@@ -193,7 +193,6 @@ async function sendMessage() {
             if (!res.ok) throw new Error("Response is NOT ok");
             return res.json();
         });
-        console.log(responseM);
         if(numMessages < responseM.messages.length){
             drawMessages(responseM);
         }
@@ -206,7 +205,6 @@ async function getMessages() {
             if (!res.ok) throw new Error("Response is NOT ok");
             return res.json();
         });
-        console.log(responseM);
         if(numMessages < responseM.messages.length){
             drawMessages(responseM);
         }
