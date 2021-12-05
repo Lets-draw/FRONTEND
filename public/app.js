@@ -93,6 +93,7 @@
         }
     };
 })();*/
+var numMesaages = 0;
 
 async function myFunction() {
     const queryString = window.location.search;
@@ -193,6 +194,9 @@ async function sendMessage() {
             return res.json();
         });
         console.log(responseM);
+        if(numMessages < response.messages.length){
+            drawMessages(response);
+        }
 }
 async function getMessages() {
     const queryString = window.location.search;
@@ -203,4 +207,30 @@ async function getMessages() {
             return res.json();
         });
         console.log(responseM);
+        if(numMessages < response.messages.length){
+            drawMessages(response);
+        }
+        
+}
+function drawMessages(response){
+    var str = response;
+  console.log(response);
+  var j = str.messages.length-numMessages;
+   for(var i = j;i<str.messages.length;i++)
+   {
+       console.log(str.user[i].user);
+       console.log(str.user[i].message);
+       var nombre = str.user[i].user;
+       var message = str.user[i].message;
+       //var tblRow = "<tr><td><img class='icono' src='"+skin+"'/></td><td>"+nombre+"</td><td>"+points+"</td></tr>"
+        /*var table = document.getElementById('userdata');
+        var rowCount = table.rows.length;
+        for (var i = 1; i < rowCount; i++) {
+            table.deleteRow(i);
+        } */
+        //$(tblRow).appendTo("#userdata tbody");
+      //document.getElementById(i+1).textContent= string;
+
+   }
+   numMessages=str.messages.length;
 }
