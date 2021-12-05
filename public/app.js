@@ -231,7 +231,7 @@ function drawMessages(response){
 }
 var wage = document.getElementById("message");
 wage.addEventListener("keydown", function (e) {
-    if (e.code === 12+1) {  //checks whether the pressed key is "Enter"
+    if (e.code === 13) {  //checks whether the pressed key is "Enter"
         getMessages();
     }
 });
