@@ -247,9 +247,10 @@ async function getUsers(){
   var str = response;
   //if(numUsers<str.user.length){
         console.log(response);
-        var old = document.getElementById("#userdata tbody");
-        var new_tbody = document.createElement('tbody');
-        document.getElementById("#userdata").replaceChild(new_tbody, old);
+        document.getElementById('userdata');
+        for (var i = 0; i < str.user.length; i++) {
+            table.deleteRow(1);
+        }
         for (var i = 0; i < str.user.length; i++)
         {
             console.log(str.user[i].nikname);
