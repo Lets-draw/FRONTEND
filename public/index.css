@@ -130,7 +130,6 @@ tr:nth-child(even){
 	background-color: #ddd;
 }
 #countdown{
-    text-align: center;
     font-size: 20px;
     color:#246355;
     font-weight: bold;
