@@ -134,8 +134,8 @@ async function myFunction() {
       return rest.json();
   }
   );
-    console.log(getPalabra);
-    console.log(getPalabra.name);
+    //console.log(getPalabra);
+    //console.log(getPalabra.name);
     document.getElementById("word").innerText = "Palabra : " + getPalabra.name;
     //window.setInterval (myFunction(), 1000);
     var canvas = document.getElementById('canvas');
@@ -273,12 +273,13 @@ async function getUsers(response){
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const page_type = urlParams.get('id');
-        var response =   fetch(`https://lets-draw-back.herokuapp.com/getTimer/` + page_type +`/`).then((res) => {
-        console.log(res);
-        return res;
+        var response =   fetch(`https://lets-draw-back.herokuapp.com/getTimer/` + page_type +'/').then((res) => {
+        console.log(res.json());
+        return res.json();;
         }
 
         );
+    console.log(response.timer);
         document.getElementById('countdown').innerHTML = response.timer;
 
     }
