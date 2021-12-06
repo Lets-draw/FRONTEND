@@ -247,7 +247,7 @@ async function getUsers(){
   var str = response;
   //if(numUsers<str.user.length){
         console.log(response);
-        $("#userdata tbody tr").Remove ();
+        document.getElementById("#userdata tbody").innerHTML = "";
         for (var i = 0; i < str.user.length; i++)
         {
             console.log(str.user[i].nikname);
