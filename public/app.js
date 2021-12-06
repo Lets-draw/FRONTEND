@@ -247,7 +247,7 @@ async function getUsers(){
   var str = response;
   //if(numUsers<str.user.length){
         console.log(response);
-        document.getElementById('userdata');
+        var table = document.getElementById('userdata');
         for (var i = 0; i < str.user.length; i++) {
             table.deleteRow(1);
         }
