@@ -259,10 +259,11 @@ async function getUsers(response){
              for (var i = 1; i < rowCount; i++) {
              table.deleteRow(i);
              } */
-            document.getElementById("#userdata tbody").innerHTML = "";
+            //document.getElementById("#userdata tbody").innerHTML = "";
             /*var new_tbody = document.createElement('tbody');
             populate_with_new_rows(new_tbody);
             old_tbody.parentNode.replaceChild(new_tbody, old_tbody);*/
+            $("#userdata tbody tr"). Remove ();
             $(tblRow).appendTo("#userdata tbody");
             //document.getElementById(i+1).textContent= string;
 
