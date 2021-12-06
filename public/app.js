@@ -245,7 +245,7 @@ async function getUsers(response){
           
   );
   var str = response;
-  if(numUsers<str.user.length){
+  //if(numUsers<str.user.length){
         console.log(response);
         for (var i = numUsers; i < str.user.length; i++)
         {
@@ -259,12 +259,13 @@ async function getUsers(response){
              for (var i = 1; i < rowCount; i++) {
              table.deleteRow(i);
              } */
+            $(tblRow).cleanRaws();
             $(tblRow).appendTo("#userdata tbody");
             //document.getElementById(i+1).textContent= string;
 
         }
         numUsers=str.user.length;
-  }
+  //}
   
 }
     
