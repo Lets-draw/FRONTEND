@@ -234,7 +234,7 @@ function drawMessages(response){
    }
    numMessages=str.messages.length;
 }
-async function getUsers(response){
+async function getUsers(){
      const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const page_type = urlParams.get('id');
