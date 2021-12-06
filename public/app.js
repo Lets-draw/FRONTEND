@@ -270,13 +270,17 @@ async function getUsers(response){
     //var timer;
 
     function showRemaining() {
-        if (seconds <= 0) {
-            seconds=60;
-            // Logica de cambio de turno 
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const page_type = urlParams.get('id');
+        var response =   fetch(`https://lets-draw-back.herokuapp.com/getTimer/` + page_type).then((res) => {
+        console.log(res.json());
+        return res.json();
         }
-        
-        document.getElementById('countdown').innerHTML = seconds ;
-        seconds=seconds-1;
+
+        );
+        document.getElementById('countdown').innerHTML = res.timer;
+
     }
 
     //timer = setInterval(showRemaining, 1000);
