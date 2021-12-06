@@ -279,7 +279,7 @@ async function getUsers(response){
         }
 
         );
-        document.getElementById('countdown').innerHTML = res.timer;
+        document.getElementById('countdown').innerHTML = response.timer;
 
     }
 
