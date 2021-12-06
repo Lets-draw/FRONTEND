@@ -12,8 +12,8 @@ body {
     border: solid 5px;
     border-radius: 21px 28px 28px 28px;
     border-color: #246355;
-    height: 60%;
-    width: 45%;
+    height: 500;
+    width: 500;
 }
 
 #points {
