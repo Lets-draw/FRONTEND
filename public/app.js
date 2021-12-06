@@ -247,7 +247,8 @@ async function getUsers(){
   var str = response;
   //if(numUsers<str.user.length){
         console.log(response);
-        for (var i = numUsers; i < str.user.length; i++)
+        $("#userdata tbody tr").Remove ();
+        for (var i = 0; i < str.user.length; i++)
         {
             console.log(str.user[i].nikname);
             var nombre = str.user[i].nikname;
@@ -263,7 +264,7 @@ async function getUsers(){
             /*var new_tbody = document.createElement('tbody');
             populate_with_new_rows(new_tbody);
             old_tbody.parentNode.replaceChild(new_tbody, old_tbody);*/
-            $("#userdata tbody tr"). Remove ();
+            
             $(tblRow).appendTo("#userdata tbody");
             //document.getElementById(i+1).textContent= string;
 
