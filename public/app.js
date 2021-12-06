@@ -273,7 +273,7 @@ async function getUsers(response){
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const page_type = urlParams.get('id');
-        var response =   fetch(`https://lets-draw-back.herokuapp.com/getTimer/` + page_type).then((res) => {
+        var response =   fetch(`https://lets-draw-back.herokuapp.com/getTimer/` + page_type +`/`).then((res) => {
         console.log(res.json());
         return res.json();
         }
