@@ -7,19 +7,17 @@ body {
     overflow:hidden;
     background-color: #FFFFFF;
     position: fixed;
-    top: 10%;
+    top: 15%;
     left: 20%;
     border: solid 5px;
     border-radius: 21px 28px 28px 28px;
     border-color: #246355;
-    height: 500;
-    width: 500;
 }
 
 #points {
     background-color: #FFFFFF;
     position: fixed;
-    top: 10%;
+    top: 15%;
     left: 1%;
     border: solid 5px;
     height: 60%;
@@ -39,9 +37,9 @@ body {
 
 
 .chat {
-	background-color: #FFFFFF;
+    background-color: #FFFFFF;
     position: fixed;
-    top: 10%;
+    top: 15%;
     left: 72%;
     border: solid 5px;
     height: 60%;
@@ -126,5 +124,8 @@ tr:nth-child(even){
     font-size: 20px;
     color:#246355;
     font-weight: bold;
+}
+#main{
+    margin-top: 50%;
 }
 

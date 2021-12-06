@@ -140,6 +140,7 @@ async function myFunction() {
     //window.setInterval (myFunction(), 1000);
     var canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
+    canvas.setBoundingClientRect();
     var rect = canvas.getBoundingClientRect();
     
     var x = 0, y = 0, dibujando = false, color = 'black', grosor = 1;
