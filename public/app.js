@@ -247,7 +247,9 @@ async function getUsers(){
   var str = response;
   //if(numUsers<str.user.length){
         console.log(response);
-        document.getElementById("#userdata tbody").innerHTML = "";
+        var old = document.getElementById("#userdata tbody");
+        var new_tbody = document.createElement('tbody');
+        document.getElementById("#userdata").replaceChild(new_tbody, old);
         for (var i = 0; i < str.user.length; i++)
         {
             console.log(str.user[i].nikname);
@@ -260,7 +262,6 @@ async function getUsers(){
              for (var i = 1; i < rowCount; i++) {
              table.deleteRow(i);
              } */
-            //document.getElementById("#userdata tbody").innerHTML = "";
             /*var new_tbody = document.createElement('tbody');
             populate_with_new_rows(new_tbody);
             old_tbody.parentNode.replaceChild(new_tbody, old_tbody);*/
