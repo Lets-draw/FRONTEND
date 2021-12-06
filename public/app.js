@@ -259,7 +259,7 @@ async function getUsers(response){
              for (var i = 1; i < rowCount; i++) {
              table.deleteRow(i);
              } */
-            $(tblRow).cleanRaws();
+            $(tblRow).innerHTML = "";
             $(tblRow).appendTo("#userdata tbody");
             //document.getElementById(i+1).textContent= string;
 
