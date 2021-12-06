@@ -253,7 +253,7 @@ async function getUsers(response){
             var nombre = str.user[i].nikname;
             var skin = str.user[i].skin;
             var points = str.user[i].points;
-            var tblRow = "<tr><td><img class='icono' src='" + skin + "'/></td><td>" + nombre + "</td><td>" + points + "</td></tr>"
+            var tblRow = "<tr><td><img class='icono' src='" + skin + "'/></td><td>" + nombre + "</td><td>" + points + "</td></tr>";
             /*var table = document.getElementById('userdata');
              var rowCount = table.rows.length;
              for (var i = 1; i < rowCount; i++) {
