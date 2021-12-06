@@ -95,6 +95,7 @@
 })();*/
 var numMessages = 0;
 var numUsers=0;
+var seconds = 60;
 async function myFunction() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -181,6 +182,7 @@ async function myFunction() {
     }
     setInterval('getMessages()',1000);
     setInterval('getUsers()',1000);
+    setInterval(showRemaining, 1000);
 }
 async function sendMessage() {
     const queryString = window.location.search;
@@ -264,6 +266,20 @@ async function getUsers(response){
   }
   
 }
+    
+    //var timer;
+
+    function showRemaining() {
+        if (seconds <= 0) {
+            seconds=60;
+            // Logica de cambio de turno 
+        }
+        
+        document.getElementById('countdown').innerHTML = seconds ;
+        seconds=seconds-1;
+    }
+
+    //timer = setInterval(showRemaining, 1000);
 /*
 var wage = document.getElementById("message");
 wage.addEventListener("keydown", function (e) {
