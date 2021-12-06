@@ -280,9 +280,9 @@ async function getUsers(response){
         );
         console.log(response.timer);
         document.getElementById('countdown').innerHTML = response.timer;
-        if (response.timer==="1") {
+        //if (response.timer==="1") {
             changeWord();
-        }
+        //}
     }
     async function changeWord() {
         const queryString = window.location.search;
