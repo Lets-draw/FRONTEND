@@ -129,4 +129,8 @@ thead{
 tr:nth-child(even){
 	background-color: #ddd;
 }
+.countdown{
+    font-size: 2.6em;
+    color: red;
+}
 

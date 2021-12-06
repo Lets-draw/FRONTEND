@@ -278,8 +278,25 @@ async function getUsers(response){
         }
 
         );
-    console.log(response.timer);
+        console.log(response.timer);
         document.getElementById('countdown').innerHTML = response.timer;
+        if (response.timer=="1") {
+            changeWord();
+        }
+
+    }
+    async function changeWord() {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const page_type = urlParams.get('id');
+        var getPalabra=  await  fetch(`https://lets-draw-back.herokuapp.com/getWord/`+page_type+'/').then((rest)=>{
+      if (!rest.ok) throw new Error("Response is NOT ok");
+      return rest.json();
+  }
+  );
+    //console.log(getPalabra);
+    //console.log(getPalabra.name);
+    document.getElementById("word").innerText = "Palabra : " + getPalabra.name;
 
     }
 
