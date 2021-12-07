@@ -280,21 +280,21 @@ async function getUsers(){
     
     //var timer;
 
-    async function showRemaining() {
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const page_type = urlParams.get('id');
-        var response =  await  fetch(`https://lets-draw-back.herokuapp.com/getTimer/` + page_type +'/').then((res) => {
+async function showRemaining() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const page_type = urlParams.get('id');
+    var response = await  fetch(`https://lets-draw-back.herokuapp.com/getTimer/` + page_type + '/').then((res) => {
         return res.json();
-        }
-
-        );
-        console.log(response.timer);
-        document.getElementById('countdown').innerHTML = "Time: "+response.timer;
-        //if (response.timer==="1") {
-            changeWord();
-        //}
     }
+
+    );
+    console.log(response.timer);
+    document.getElementById('countdown').innerHTML = "Time: " + response.timer;
+    //if (response.timer==="1") {
+    changeWord();
+    //}
+}
 async function changeWord() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -328,13 +328,16 @@ async function changeWord() {
     document.getElementById("word").innerText = "Palabra : " + palabra;
 
 }
-
-    //timer = setInterval(showRemaining, 1000);
-/*
-var wage = document.getElementById("message");
-wage.addEventListener("keydown", function (e) {
-    if (e.code === 13) {  //checks whether the pressed key is "Enter"
-        getMessages();
+async function leave() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const page_type = urlParams.get('id');
+    var nombre =localStorage.getItem("usuario");
+    var response = await  fetch(`https://lets-draw-back.herokuapp.com/delUser/`+nombre+'/' + page_type + '/').then((res) => {
+        return res.json();
     }
-});*/
+    );
+    window.location.replace("https://lets-draw-front.herokuapp.com/LetsDraw.html");
+}
+
 
