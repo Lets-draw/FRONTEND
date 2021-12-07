@@ -128,7 +128,9 @@ async function myFunction() {
         $(tblRow).appendTo("#userdata tbody");
       //document.getElementById(i+1).textContent= string;
 
-   }/*
+   }
+   changeWord();
+   /*
    var getPalabra=  await  fetch(`https://lets-draw-back.herokuapp.com/getWord/`+page_type+'/').then((rest)=>{
       if (!rest.ok) throw new Error("Response is NOT ok");
       return rest.json();
