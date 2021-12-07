@@ -128,7 +128,7 @@ async function myFunction() {
         $(tblRow).appendTo("#userdata tbody");
       //document.getElementById(i+1).textContent= string;
 
-   }
+   }/*
    var getPalabra=  await  fetch(`https://lets-draw-back.herokuapp.com/getWord/`+page_type+'/').then((rest)=>{
       if (!rest.ok) throw new Error("Response is NOT ok");
       return rest.json();
@@ -136,7 +136,7 @@ async function myFunction() {
   );
     //console.log(getPalabra);
     //console.log(getPalabra.name);
-    document.getElementById("word").innerText = "Palabra : " + getPalabra.name;
+    document.getElementById("word").innerText = "Palabra : " + getPalabra.name;*/
     //window.setInterval (myFunction(), 1000);
     var canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
@@ -293,20 +293,33 @@ async function getUsers(){
             changeWord();
         //}
     }
-    async function changeWord() {
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const page_type = urlParams.get('id');
-        var getPalabra=  await  fetch(`https://lets-draw-back.herokuapp.com/getWord/`+page_type+'/').then((rest)=>{
-      if (!rest.ok) throw new Error("Response is NOT ok");
-      return rest.json();
-  }
-  );
+async function changeWord() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const page_type = urlParams.get('id');
+    var getPalabra = await  fetch(`https://lets-draw-back.herokuapp.com/getWord/` + page_type + '/').then((rest) => {
+        if (!rest.ok)
+            throw new Error("Response is NOT ok");
+        return rest.json();
+    }
+    );
+    var palabra = "";
+    for (var i = 0; i < getPalabra.name.length; i++) {
+        palabra+="_ ";
+    }
+    
+    for (var i = 0; i < str.user.length; i++)
+    {
+        if (getPalabra.user[i].nikname === localStorage.getItem("usuario") && getPalabra.user[i].dibujante==="true") {
+            palabra = getPalabra.name;
+        }
+    }
+
     //console.log(getPalabra);
     //console.log(getPalabra.name);
-    document.getElementById("word").innerText = "Palabra : " + getPalabra.name;
+    document.getElementById("word").innerText = "Palabra : " + palabra;
 
-    }
+}
 
     //timer = setInterval(showRemaining, 1000);
 /*
