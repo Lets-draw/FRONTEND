@@ -220,11 +220,8 @@ async function getMessages() {
 }
 function drawMessages(response){
     var str = response;
-  //console.log(response);
    for(var i = numMessages;i<str.messages.length;i++)
    {
-       //console.log(str.messages[i].user);
-       //console.log(str.messages[i].message);
        var nombre = str.messages[i].user;
        var message = str.messages[i].message;
        var node = document.createElement("label");
@@ -243,43 +240,27 @@ async function getUsers(){
    var response=    await  fetch(`https://lets-draw-back.herokuapp.com/getRoomInfo/`+page_type).then((res)=>{
       if (!res.ok) throw new Error("Response is NOT ok");
       return res.json();
-  }
-          
+  }      
   );
   var str = response;
   //if(numUsers<str.user.length){
-        console.log(response);
         var table = document.getElementById('userdata');
         for (var i = 0; i < str.user.length; i++) {
             table.deleteRow(1);
         }
         for (var i = 0; i < str.user.length; i++)
         {
-            console.log(str.user[i].nikname);
             var nombre = str.user[i].nikname;
             var skin = str.user[i].skin;
             var points = str.user[i].points;
-            var tblRow = "<tr><td><img class='icono' src='" + skin + "'/></td><td>" + nombre + "</td><td>" + points + "</td></tr>";
-            /*var table = document.getElementById('userdata');
-             var rowCount = table.rows.length;
-             for (var i = 1; i < rowCount; i++) {
-             table.deleteRow(i);
-             } */
-            /*var new_tbody = document.createElement('tbody');
-            populate_with_new_rows(new_tbody);
-            old_tbody.parentNode.replaceChild(new_tbody, old_tbody);*/
-            
+            var tblRow = "<tr><td><img class='icono' src='" + skin + "'/></td><td>" + nombre + "</td><td>" + points + "</td></tr>";           
             $(tblRow).appendTo("#userdata tbody");
-            //document.getElementById(i+1).textContent= string;
 
         }
         numUsers=str.user.length;
-  //}
   
 }
-    
-    //var timer;
-
+   
 async function showRemaining() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -287,13 +268,9 @@ async function showRemaining() {
     var response = await  fetch(`https://lets-draw-back.herokuapp.com/getTimer/` + page_type + '/').then((res) => {
         return res.json();
     }
-
     );
-    console.log(response.timer);
     document.getElementById('countdown').innerHTML = "Time: " + response.timer;
-    //if (response.timer==="1") {
     changeWord();
-    //}
 }
 async function changeWord() {
     const queryString = window.location.search;
@@ -323,8 +300,6 @@ async function changeWord() {
         }
     }
 
-    //console.log(getPalabra);
-    //console.log(getPalabra.name);
     document.getElementById("word").innerText = "Palabra : " + palabra;
 
 }
@@ -334,7 +309,7 @@ async function leave() {
     const page_type = urlParams.get('id');
     var nombre =localStorage.getItem("usuario");
     var response = await  fetch(`https://lets-draw-back.herokuapp.com/delUser/`+nombre+'/' + page_type + '/').then((res) => {
-        return res.json();
+        return res;
     }
     );
     window.location.replace("https://lets-draw-front.herokuapp.com/LetsDraw.html");
