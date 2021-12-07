@@ -1,4 +1,4 @@
-body { 
+ body { 
     background-color: #F8B25E;
     font-family: 'Noto Serif', serif;
  }
@@ -28,6 +28,10 @@ input.btn
 img
 {
   margin-top: 5%;
+}
+img2
+{
+ margin-top: 5%;
 }
 
 label{
@@ -79,5 +83,8 @@ div.img img {
 div.desc {
     padding: 15px;
     text-align: center;
+}
+.fila{
+    float: left;
 }
 
