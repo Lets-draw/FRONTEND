@@ -310,7 +310,7 @@ async function changeWord() {
         palabra+="_ ";
     }
     
-    for (var i = 0; i < str.user.length; i++)
+    for (var i = 0; i < getPalabra.user.length; i++)
     {
         if (getPalabra.user[i].nikname === localStorage.getItem("usuario") && getPalabra.user[i].dibujante==="true") {
             palabra = getPalabra.name;
