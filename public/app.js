@@ -102,7 +102,6 @@ async function myFunction() {
 
     const page_type = urlParams.get('id');
     document.getElementById("sala").innerText="ID sala : "+page_type;
-    console.log(page_type);
     
     var response=    await  fetch(`https://lets-draw-back.herokuapp.com/getRoomInfo/`+page_type).then((res)=>{
       if (!res.ok) throw new Error("Response is NOT ok");
@@ -111,11 +110,9 @@ async function myFunction() {
           
   );
   var str = response;
-  console.log(response);
   numUsers=str.user.length;
    for(var i = 0;i<str.user.length;i++)
    {
-       console.log(str.user[i].nikname);
        var nombre = str.user[i].nikname;
        var skin = str.user[i].skin;
        var points = str.user[i].points;
@@ -233,32 +230,34 @@ function drawMessages(response){
    }
    numMessages=str.messages.length;
 }
-async function getUsers(){
-     const queryString = window.location.search;
+async function getUsers() {
+    const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const page_type = urlParams.get('id');
-   var response=    await  fetch(`https://lets-draw-back.herokuapp.com/getRoomInfo/`+page_type).then((res)=>{
-      if (!res.ok) throw new Error("Response is NOT ok");
-      return res.json();
-  }      
-  );
-  var str = response;
-  //if(numUsers<str.user.length){
-        var table = document.getElementById('userdata');
-        for (var i = 1; i < table.rows.length; i++) {
-            table.deleteRow(1);
-        }
-        for (var i = 0; i < str.user.length; i++)
-        {
-            var nombre = str.user[i].nikname;
-            var skin = str.user[i].skin;
-            var points = str.user[i].points;
-            var tblRow = "<tr><td><img class='icono' src='" + skin + "'/></td><td>" + nombre + "</td><td>" + points + "</td></tr>";           
-            $(tblRow).appendTo("#userdata tbody");
+    var response = await  fetch(`https://lets-draw-back.herokuapp.com/getRoomInfo/` + page_type).then((res) => {
+        if (!res.ok)
+            throw new Error("Response is NOT ok");
+        return res.json();
+    }
+    );
+    var str = response;
+    //if(numUsers<str.user.length){
+    var table = document.getElementById('userdata');
+    console.log(numUsers);
+    for (var i = 0; i < numUsers; i++) {
+        table.deleteRow(1);
+    }
+    for (var i = 0; i < str.user.length; i++)
+    {
+        var nombre = str.user[i].nikname;
+        var skin = str.user[i].skin;
+        var points = str.user[i].points;
+        var tblRow = "<tr><td><img class='icono' src='" + skin + "'/></td><td>" + nombre + "</td><td>" + points + "</td></tr>";
+        $(tblRow).appendTo("#userdata tbody");
 
-        }
-        numUsers=str.user.length;
-  
+    }
+    numUsers = str.user.length;
+
 }
    
 async function showRemaining() {
