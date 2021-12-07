@@ -305,14 +305,20 @@ async function changeWord() {
         return rest.json();
     }
     );
+     var response=    await  fetch(`https://lets-draw-back.herokuapp.com/getRoomInfo/`+page_type).then((res)=>{
+      if (!res.ok) throw new Error("Response is NOT ok");
+      return res.json();
+  }
+          
+  );
     var palabra = "";
     for (var i = 0; i < getPalabra.name.length; i++) {
         palabra+="_ ";
     }
     
-    for (var i = 0; i < getPalabra.user.length; i++)
+    for (var i = 0; i < response.user.length; i++)
     {
-        if (getPalabra.user[i].nikname === localStorage.getItem("usuario") && getPalabra.user[i].dibujante==="true") {
+        if (response.user[i].nikname === localStorage.getItem("usuario") && response.user[i].dibujante==="true") {
             palabra = getPalabra.name;
         }
     }
