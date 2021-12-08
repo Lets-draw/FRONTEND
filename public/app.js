@@ -371,6 +371,7 @@ function convertURIToImageData(URI) {
     image.src = URI;
     var img = document.createElement('img');
             img.src = URI;
+            img.setAttribute('id','canvasImg');
             document.getElementById('canvasDiv').appendChild(img);
     
   });
@@ -411,10 +412,11 @@ async function getCanvas(){
     }
     );
     var url=start.board;
+    /*
     var buscar="ñ" 
     var str=url.replace(new RegExp(buscar,"g") ,"/");
-    console.log("data:image/png;base64,"+str);
-    convertURIToImageData("data:image/png;base64,"+ str);
+    console.log("data:image/png;base64,"+str);*/
+    convertURIToImageData("data:image/png;base64,"+ url);
 }
 
 
