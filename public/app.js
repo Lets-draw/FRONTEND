@@ -383,10 +383,11 @@ async function sendCanvas(URI){
     var buscar="/" ;
     var str =newUri.replace(new RegExp(buscar,"g") ,"ñ");
     console.log("SET: "+str);
-    var clean = await  fetch(`https://lets-draw-back.herokuapp.com/cleanBoard/` + page_type + '/'+ str).then((res) => {
+    /*
+    var clean = await  fetch(`https://lets-draw-back.herokuapp.com/cleanBoard/` + page_type + '/').then((res) => {
         return res;
     }
-    );
+    );*/
     var _data = {
         id: page_type,
         board: URI
