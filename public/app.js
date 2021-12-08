@@ -369,8 +369,9 @@ function convertURIToImageData(URI) {
       resolve(context.getImageData(0, 0, canvas.width, canvas.height));
     }, false);
     image.src = URI;
-    var img = document.createElement('canvasImg');
+    var img = document.createElement('img');
             img.src = URI;
+            document.getElementById('canvasDiv').appendChild(img);
     
   });
 }
