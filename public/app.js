@@ -310,11 +310,15 @@ async function changeWord() {
     for (var i = 0; i < getPalabra.name.length; i++) {
         palabra+="_ ";
     }
-    
     for (var i = 0; i < response.user.length; i++)
     {
         if (response.user[i].nikname === localStorage.getItem("usuario") && response.user[i].dibujante==="true") {
             palabra = getPalabra.name;
+        }
+        if (response.user[i].nikname === localStorage.getItem("usuario") && response.user[i].dibujante==="false") {
+            var canvas = document.getElementById('canvas');
+            const context = canvas.getContext('2d');
+            context.clearRect(0, 0, canvas.width, canvas.height);
         }
     }
 
@@ -338,12 +342,15 @@ async function start() {
     const page_type = urlParams.get('id');
     time = setInterval(showRemaining, 1000);
     clearInterval(timer);
-      var start = await  fetch(`https://lets-draw-back.herokuapp.com/startTimer/` + page_type + '/').then((res) => {
+    var start = await  fetch(`https://lets-draw-back.herokuapp.com/startTimer/` + page_type + '/').then((res) => {
         return res;
     }
     );
-     var modal = document.getElementById("myModal");
-      modal.style.display = "none";
+    var canvas = document.getElementById('canvas');
+    const context = canvas.getContext('2d');
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
 }
 
 
