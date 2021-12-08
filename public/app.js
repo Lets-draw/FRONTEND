@@ -272,6 +272,7 @@ async function showRemaining() {
     }
     );
     if (response.timer === "1") {
+        clearInterval(time);
         var stop = await  fetch(`https://lets-draw-back.herokuapp.com/stopTimer/` + page_type + '/').then((res) => {
             return res;
         }
@@ -279,12 +280,6 @@ async function showRemaining() {
         var modal = document.getElementById("myModal");
         modal.style.display = "block";
         timer = setInterval('start()', 3000);
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
     }
     document.getElementById('countdown').innerHTML = "Time: " + response.timer;
     changeWord();
@@ -349,6 +344,7 @@ async function start() {
     context.clearRect(0, 0, canvas.width, canvas.height);
     var modal = document.getElementById("myModal");
     modal.style.display = "none";
+    time = setInterval(showRemaining, 1000);
 }
 
 
