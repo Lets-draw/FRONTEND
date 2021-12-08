@@ -362,6 +362,7 @@ async function start() {
     var modal = document.getElementById("myModal");
     modal.style.display = "none";
     time = setInterval(showRemaining, 1000);
+    window.location.reload();
 }
 function getImage(){
     var canvas = document.getElementById('canvas');
