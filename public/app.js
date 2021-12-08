@@ -98,6 +98,7 @@ var numUsers=0;
 var seconds = 60;
 var time = true;
 var timer = true;
+var ctx = true;
 var x = 0, y = 0, dibujando = false, color = 'black', grosor = 1;
 async function myFunction() {
     const queryString = window.location.search;
@@ -141,7 +142,7 @@ async function myFunction() {
     document.getElementById("word").innerText = "Palabra : " + getPalabra.name;*/
     //window.setInterval (myFunction(), 1000);
     var canvas = document.getElementById('canvas');
-    var ctx = canvas.getContext('2d');
+    ctx = canvas.getContext('2d');
     var rect = canvas.getBoundingClientRect();
     
     
