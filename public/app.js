@@ -99,6 +99,7 @@ var seconds = 60;
 var time = true;
 var timer = true;
 var ctx = true;
+var canvasImage = true;
 var x = 0, y = 0, dibujando = false, color = 'black', grosor = 1;
 async function myFunction() {
     const queryString = window.location.search;
@@ -353,7 +354,7 @@ async function start() {
 function getImage(){
     var canvas = document.getElementById('canvas');
     var dataURL = canvas.toDataURL();
-    convertURIToImageData(dataURL);
+    sendCanvas(dataURL);
 }
 function convertURIToImageData(URI) {
   return new Promise(function(resolve, reject) {
@@ -370,9 +371,23 @@ function convertURIToImageData(URI) {
     image.src = URI;
     var img = document.createElement('img');
             img.src = URI;
-            document.getElementById('canvas').appendChild(img);
+            document.getElementById('imgCanvas').appendChild(img);
     
   });
+}
+async function sendCanvas(URI){
+    var start = await  fetch(`https://lets-draw-back.herokuapp.com/setBoard/` + page_type + '/'+URI).then((res) => {
+        return res;
+    }
+    );
+}
+async function getCanvas(){
+    var start = await  fetch(`https://lets-draw-back.herokuapp.com/getBoard/` + page_type).then((res) => {
+        return res.json();
+    }
+    );
+    console.log(start.board);
+    convertURIToImageData(start.board);
 }
 
 
