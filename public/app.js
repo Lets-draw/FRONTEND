@@ -380,13 +380,25 @@ async function sendCanvas(URI){
     const urlParams = new URLSearchParams(queryString);
     const page_type = urlParams.get('id');
     var newUri=URI.substring(22);
-    var buscar="/" 
-    var str=newUri.replace(new RegExp(buscar,"g") ,"ñ");
+    var buscar="/" ;
+    var str =newUri.replace(new RegExp(buscar,"g") ,"ñ");
     console.log("SET: "+str);
-    var start = await  fetch(`https://lets-draw-back.herokuapp.com/setBoard/` + page_type + '/'+ str).then((res) => {
+    var clean = await  fetch(`https://lets-draw-back.herokuapp.com/cleanBoard/` + page_type + '/'+ str).then((res) => {
         return res;
     }
     );
+    var _data = {
+        id: page_type,
+        board: URI
+    }
+
+    var post= await fetch('https://lets-draw-back.herokuapp.com/setBoard/', {
+            method: 'POST',
+            body: JSON.stringify(_data),
+            headers: {
+                "Content-type": "application/json"}
+            })
+      .then(response => response);
 }
 async function getCanvas(){
     const queryString = window.location.search;
