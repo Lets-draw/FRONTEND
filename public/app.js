@@ -350,6 +350,30 @@ async function start() {
     modal.style.display = "none";
     time = setInterval(showRemaining, 1000);
 }
+function getImage(){
+    var canvas = document.getElementById('canvas');
+    var dataURL = canvas.toDataURL();
+    convertURIToImageData(dataURL);
+}
+function convertURIToImageData(URI) {
+  return new Promise(function(resolve, reject) {
+    if (URI === null) return reject();
+    var canvas = document.createElement('canvas'),
+        context = canvas.getContext('2d'),
+        image = new Image();
+    image.addEventListener('load', function() {
+      canvas.width = image.width;
+      canvas.height = image.height;
+      context.drawImage(image, 0, 0, canvas.width, canvas.height);
+      resolve(context.getImageData(0, 0, canvas.width, canvas.height));
+    }, false);
+    image.src = URI;
+    var img = document.createElement('img');
+            img.src = URI;
+            document.getElementById('imgCanvas').appendChild(img);
+    
+  });
+}
 
 
       
