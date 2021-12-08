@@ -380,7 +380,8 @@ async function sendCanvas(URI){
     const urlParams = new URLSearchParams(queryString);
     const page_type = urlParams.get('id');
     console.log("SET: "+URI.substring(22));
-    var start = await  fetch(`https://lets-draw-back.herokuapp.com/setBoard/` + page_type + '/'+URI.substring(22)).then((res) => {
+    var newUri=URI.substring(22)
+    var start = await  fetch(`https://lets-draw-back.herokuapp.com/setBoard/` + page_type + '/'+newUri.replace('/', 'ñ')).then((res) => {
         return res;
     }
     );
@@ -393,8 +394,9 @@ async function getCanvas(){
         return res.json();
     }
     );
-    console.log("data:image/png;base64,"+start.board);
-    convertURIToImageData("data:image/png;base64,"+start.board);
+    var url=start.board;
+    console.log("data:image/png;base64,"+url.replace('ñ', '/'));
+    convertURIToImageData("data:image/png;base64,"+url.replace('ñ', '/'));
 }
 
 
