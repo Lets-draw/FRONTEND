@@ -250,7 +250,7 @@ async function getUsers() {
     var str = response;
     //if(numUsers<str.user.length){
     var table = document.getElementById('userdata');
-    console.log(numUsers);
+    //console.log(numUsers);
     for (var i = 0; i < numUsers; i++) {
         table.deleteRow(1);
     }
@@ -261,10 +261,10 @@ async function getUsers() {
         var points = str.user[i].points;
         var tblRow = "<tr><td><img class='icono' src='" + skin + "'/></td><td>" + nombre + "</td><td>" + points + "</td></tr>";
         $(tblRow).appendTo("#userdata tbody");
-        if (str.user[i].nikname === localStorage.getItem("usuario") && str.user[i].dibujante==="true") {
+        if (str.user[i].nikname === localStorage.getItem("usuario") && str.user[i].dibujante==="false") {
             canvasImage = setInterval('getCanvas()', 1000);
         }
-        if (str.user[i].nikname === localStorage.getItem("usuario") && str.user[i].dibujante==="false") {
+        if (str.user[i].nikname === localStorage.getItem("usuario") && str.user[i].dibujante==="true") {
             canvasImage = setInterval('getImage()', 1000);
         }
 
@@ -406,8 +406,7 @@ async function sendCanvas(URI){
     };
 
     fetch(url, options)
-            .then(res => res)
-            .then(res => console.log(res));
+            .then(res => res);
     //console.log(JSON.stringify(_data));
 }
 async function getCanvas(){
