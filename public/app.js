@@ -345,6 +345,8 @@ async function leave() {
 function start() {
     time = setInterval(showRemaining, 1000);
     clearInterval(timer);
+     var modal = document.getElementById("myModal");
+      modal.style.display = "none";
 }
 
 
