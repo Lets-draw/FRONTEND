@@ -96,6 +96,8 @@
 var numMessages = 0;
 var numUsers=0;
 var seconds = 60;
+var time = true;
+var timer = true;
 async function myFunction() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -182,7 +184,7 @@ async function myFunction() {
     }
     setInterval('getMessages()',1000);
     setInterval('getUsers()',1000);
-    setInterval(showRemaining, 1000);
+    time = setInterval(showRemaining, 1000);
 }
 async function sendMessage() {
     const queryString = window.location.search;
@@ -271,10 +273,11 @@ async function showRemaining() {
     );
     if (response.timer === "1") {
         var modal = document.getElementById("myModal");
+        clearInterval(time);
         modal.style.display = "block";
-
+        timer = setInterval('start()', 3000);
 // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
+        //var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal
         /*btn.onclick = function () {
@@ -282,9 +285,9 @@ async function showRemaining() {
          }*/
 
 // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
+        /*span.onclick = function () {
             modal.style.display = "none";
-        }
+        }*/
 
 // When the user clicks anywhere outside of the modal, close it
         window.onclick = function (event) {
@@ -292,6 +295,7 @@ async function showRemaining() {
                 modal.style.display = "none";
             }
         }
+        
     }
     document.getElementById('countdown').innerHTML = "Time: " + response.timer;
     changeWord();
@@ -337,6 +341,10 @@ async function leave() {
     }
     );
     window.location.replace("https://lets-draw-front.herokuapp.com/LetsDraw.html");
+}
+function start() {
+    time = setInterval(showRemaining, 1000);
+    clearInterval(timer);
 }
 
 
