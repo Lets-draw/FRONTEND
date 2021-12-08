@@ -272,30 +272,20 @@ async function showRemaining() {
     }
     );
     if (response.timer === "1") {
+        var stop = await  fetch(`https://lets-draw-back.herokuapp.com/stopTimer/` + page_type + '/').then((res) => {
+            return res;
+        }
+        );
         var modal = document.getElementById("myModal");
         clearInterval(time);
         modal.style.display = "block";
         timer = setInterval('start()', 3000);
-// Get the <span> element that closes the modal
-        //var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal
-        /*btn.onclick = function () {
-         
-         }*/
-
-// When the user clicks on <span> (x), close the modal
-        /*span.onclick = function () {
-            modal.style.display = "none";
-        }*/
-
-// When the user clicks anywhere outside of the modal, close it
         window.onclick = function (event) {
             if (event.target == modal) {
                 modal.style.display = "none";
             }
         }
-        
+
     }
     document.getElementById('countdown').innerHTML = "Time: " + response.timer;
     changeWord();
@@ -342,11 +332,19 @@ async function leave() {
     );
     window.location.replace("https://lets-draw-front.herokuapp.com/LetsDraw.html");
 }
-function start() {
+async function start() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const page_type = urlParams.get('id');
     time = setInterval(showRemaining, 1000);
     clearInterval(timer);
+      var start = await  fetch(`https://lets-draw-back.herokuapp.com/startTimer/` + page_type + '/').then((res) => {
+        return res;
+    }
+    );
      var modal = document.getElementById("myModal");
       modal.style.display = "none";
 }
 
 
+      
