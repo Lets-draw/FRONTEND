@@ -376,12 +376,18 @@ function convertURIToImageData(URI) {
   });
 }
 async function sendCanvas(URI){
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const page_type = urlParams.get('id');
     var start = await  fetch(`https://lets-draw-back.herokuapp.com/setBoard/` + page_type + '/'+URI).then((res) => {
         return res;
     }
     );
 }
 async function getCanvas(){
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const page_type = urlParams.get('id');
     var start = await  fetch(`https://lets-draw-back.herokuapp.com/getBoard/` + page_type).then((res) => {
         return res.json();
     }
