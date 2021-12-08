@@ -283,7 +283,6 @@ async function showRemaining() {
     }
     );
     if (response.timer === "1") {
-        document.getElementById('canvasDiv').removeChild(document.getElementById('canvasImg'));
         clearInterval(canvasImage);
         clearInterval(time);
         var stop = await  fetch(`https://lets-draw-back.herokuapp.com/stopTimer/` + page_type + '/').then((res) => {
@@ -377,7 +376,11 @@ function convertURIToImageData(URI) {
       resolve(context.getImageData(0, 0, canvas.width, canvas.height));
     }, false);
     image.src = URI;
-    document.getElementById('canvasDiv').removeChild(document.getElementById('canvasImg'));
+        if (document.getElementById('canvasImg')!==null) {
+            var element =document.getElementById('canvasImg');
+            document.getElementById('canvasDiv').removeChild(element);
+        }
+    
     var img = document.createElement('img');
             img.src = URI;
             img.setAttribute('id','canvasImg');
