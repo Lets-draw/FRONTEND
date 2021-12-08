@@ -384,7 +384,7 @@ async function sendCanvas(URI){
     var str =newUri.replace(new RegExp(buscar,"g") ,"ñ");
     //console.log("SET: "+str);
     var _data = {
-        id: parse(page_type,10),
+        id: parseInt(page_type,10),
         board: newUri
     };
     const url = 'https://lets-draw-back.herokuapp.com/setBoard';
