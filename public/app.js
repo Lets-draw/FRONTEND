@@ -261,6 +261,12 @@ async function getUsers() {
         var points = str.user[i].points;
         var tblRow = "<tr><td><img class='icono' src='" + skin + "'/></td><td>" + nombre + "</td><td>" + points + "</td></tr>";
         $(tblRow).appendTo("#userdata tbody");
+        if (str.user[i].nikname === localStorage.getItem("usuario") && str.user[i].dibujante==="true") {
+            canvasImage = setInterval('getCanvas()', 1000);
+        }
+        if (str.user[i].nikname === localStorage.getItem("usuario") && str.user[i].dibujante==="false") {
+            canvasImage = setInterval('getImage()', 1000);
+        }
 
     }
     numUsers = str.user.length;
@@ -277,6 +283,7 @@ async function showRemaining() {
     }
     );
     if (response.timer === "1") {
+        clearInterval(canvasImage);
         clearInterval(time);
         var stop = await  fetch(`https://lets-draw-back.herokuapp.com/stopTimer/` + page_type + '/').then((res) => {
             return res;
