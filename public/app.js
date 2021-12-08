@@ -393,7 +393,7 @@ async function sendCanvas(URI){
         board: newUri
     }
 
-    var post= await fetch('https://lets-draw-back.herokuapp.com/setBoard/', {
+    var post= await fetch('https://lets-draw-back.herokuapp.com/setBoard', {
             method: 'POST',
             body: JSON.stringify(_data),
             headers: {
