@@ -370,7 +370,7 @@ function convertURIToImageData(URI) {
     image.src = URI;
     var img = document.createElement('img');
             img.src = URI;
-            document.getElementById('imgCanvas').appendChild(img);
+            document.getElementById('canvas').appendChild(img);
     
   });
 }
