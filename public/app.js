@@ -277,7 +277,6 @@ async function showRemaining() {
         }
         );
         var modal = document.getElementById("myModal");
-        clearInterval(time);
         modal.style.display = "block";
         timer = setInterval('start()', 3000);
         window.onclick = function (event) {
@@ -340,12 +339,11 @@ async function start() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const page_type = urlParams.get('id');
-    time = setInterval(showRemaining, 1000);
-    clearInterval(timer);
     var start = await  fetch(`https://lets-draw-back.herokuapp.com/startTimer/` + page_type + '/').then((res) => {
         return res;
     }
     );
+    //clearInterval(timer);
     var canvas = document.getElementById('canvas');
     const context = canvas.getContext('2d');
     context.clearRect(0, 0, canvas.width, canvas.height);
