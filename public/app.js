@@ -379,8 +379,8 @@ async function sendCanvas(URI){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const page_type = urlParams.get('id');
-    console.log("SET: "+URI.substring(22));
-    var newUri=URI.substring(22)
+    var newUri=URI.substring(22);
+    console.log("SET: "+newUri.replace('/', 'ñ'));
     var start = await  fetch(`https://lets-draw-back.herokuapp.com/setBoard/` + page_type + '/'+newUri.replace('/', 'ñ')).then((res) => {
         return res;
     }
