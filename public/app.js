@@ -262,10 +262,10 @@ async function getUsers() {
         var tblRow = "<tr><td><img class='icono' src='" + skin + "'/></td><td>" + nombre + "</td><td>" + points + "</td></tr>";
         $(tblRow).appendTo("#userdata tbody");
         if (str.user[i].nikname === localStorage.getItem("usuario") && str.user[i].dibujante==="false") {
-            canvasImage = setInterval('getCanvas()', 1000);
+            canvasImage = setInterval('getCanvas()', 1500);
         }
         if (str.user[i].nikname === localStorage.getItem("usuario") && str.user[i].dibujante==="true") {
-            canvasImage = setInterval('getImage()', 1000);
+            canvasImage = setInterval('getImage()', 1500);
         }
 
     }
@@ -283,6 +283,10 @@ async function showRemaining() {
     }
     );
     if (response.timer === "1") {
+        if (document.getElementById('canvasImg')!==null) {
+            var element =document.getElementById('canvasImg');
+            document.getElementById('canvasDiv').removeChild(element);
+        }
         clearInterval(canvasImage);
         clearInterval(time);
         var stop = await  fetch(`https://lets-draw-back.herokuapp.com/stopTimer/` + page_type + '/').then((res) => {
