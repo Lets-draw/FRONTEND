@@ -172,9 +172,10 @@ async function myFunction() {
         }
     });
     
-    setInterval('getMessages()',1000);
-    setInterval('getUsers()',1000);
-    time = setInterval(showRemaining, 1000);
+    //setInterval('getMessages()',1000);
+    //setInterval('getUsers()',1000);
+    //time = setInterval(showRemaining, 1000);
+    time = setInterval('getTodo()', 1000);
 }
 function dibujar(x1, y1, x2, y2) {
     ctx.beginPath();
@@ -437,6 +438,11 @@ function clearCanvas(){
     var canvas = document.getElementById('canvas');
     const context = canvas.getContext('2d');
     context.clearRect(0, 0, canvas.width, canvas.height);
+}
+async function getTodo(){
+    getUsers();
+    getMessages();
+    showRemaining();
 }
 
       
