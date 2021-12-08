@@ -382,17 +382,12 @@ async function sendCanvas(URI){
     var newUri=URI.substring(22);
     var buscar="/" ;
     var str =newUri.replace(new RegExp(buscar,"g") ,"ñ");
-    console.log("SET: "+str);
-    /*
-    var clean = await  fetch(`https://lets-draw-back.herokuapp.com/cleanBoard/` + page_type + '/').then((res) => {
-        return res;
-    }
-    );*/
+    //console.log("SET: "+str);
     var _data = {
         id: page_type,
         board: newUri
-    }
-
+    };
+    console.log(JSON.stringify(_data));
     var post= await fetch('https://lets-draw-back.herokuapp.com/setBoard', {
             method: 'POST',
             body: JSON.stringify(_data),
