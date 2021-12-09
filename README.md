@@ -1,7 +1,7 @@
 # Getting Started with Create React App
 
 
-[![CircleCI](https://circleci.com/gh/Lets-draw/FRONTEND/tree/main.svg?style=svg&circle-token=06533787438f4f08a837264a7036ea3b9a6491d5)](https://circleci.com/gh/Lets-draw/FRONTEND/tree/main)
+[![CircleCI](https://circleci.com/gh/Lets-draw/FRONTEND/tree/main.svg?style=shield&circle-token=06533787438f4f08a837264a7036ea3b9a6491d5)](https://circleci.com/gh/Lets-draw/FRONTEND/tree/main)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
