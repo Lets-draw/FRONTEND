@@ -41,7 +41,7 @@ body {
     position: fixed;
     top: 1%;
     left: 30%;
-	height: 65px;
+    height: 65px;
     width: 500px;
 }
 
@@ -200,4 +200,14 @@ tr:nth-child(even){
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+#botones{
+    
+    background-color: white;
+    width:750px ;
+    height:70px;
+    left: 20%;
+    position:relative;
+    border-radius: 21px 28px 28px 28px;
+    border-color: #246355;
 }
