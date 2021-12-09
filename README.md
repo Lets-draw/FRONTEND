@@ -1,5 +1,5 @@
 # Getting Started with Create React App
-[![Lest-Draw](https://circleci.com/gh/Lest-draw/FRONTEND.svg?style=svg&circle-token=81893024e2e4521467ef1be00ab42df010a8caed)](https://app.circleci.com/pipelines/github/Lets-draw)
+[![Lest Draw](https://circleci.com/gh/Lest-draw/FRONTEND.svg?style=svg&circle-token=06533787438f4f08a837264a7036ea3b9a6491d5)](https://app.circleci.com/pipelines/github/Lets-draw)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
