@@ -1,5 +1,5 @@
 # Getting Started with Create React App
-[![Lest Draw](https://circleci.com/gh/Lest-draw/FRONTEND.svg?style=svg&circle-token=06533787438f4f08a837264a7036ea3b9a6491d5)](https://app.circleci.com/pipelines/github/Lets-draw)
+
 
 [![CircleCI](https://circleci.com/gh/Lets-draw/FRONTEND/tree/main.svg?style=svg&circle-token=06533787438f4f08a837264a7036ea3b9a6491d5)](https://circleci.com/gh/Lets-draw/FRONTEND/tree/main)
 
